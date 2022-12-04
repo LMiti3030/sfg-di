@@ -4,7 +4,9 @@ import mititelu.laura.guru.springframework.sfgdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+@ComponentScan(basePackages = {"mititelu.laura.guru.springframework.sfgdi", "mititelu.laura.pets"})
 @SpringBootApplication
 public class SfgDiApplication {
 

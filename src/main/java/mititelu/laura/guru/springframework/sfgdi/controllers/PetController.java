@@ -1,7 +1,6 @@
 package mititelu.laura.guru.springframework.sfgdi.controllers;
 
-import mititelu.laura.guru.springframework.sfgdi.services.PetService;
-import org.springframework.beans.factory.annotation.Qualifier;
+import mititelu.laura.pets.PetService;
 import org.springframework.stereotype.Controller;
 
 /**
