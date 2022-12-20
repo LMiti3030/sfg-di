@@ -3,15 +3,13 @@ package mititelu.laura.guru.springframework.sfgdi.config;
 import mititelu.laura.guru.springframework.sfgdi.repositories.EnglishGreetingRepository;
 import mititelu.laura.guru.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import mititelu.laura.guru.springframework.sfgdi.services.*;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 
 /**
  * @author LMiti3030
  * created on 20.12.2022
  */
+@ImportResource("classpath:sfgdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {
 
@@ -20,10 +18,10 @@ public class GreetingServiceConfig {
         return new PropertyInjectedGreetingService();
     }
 
-    @Bean
-    ConstructorInjectedGreetingService constructorInjectedGreetingService(){
-        return new ConstructorInjectedGreetingService();
-    }
+//    @Bean
+//    ConstructorInjectedGreetingService constructorInjectedGreetingService(){
+//        return new ConstructorInjectedGreetingService();
+//    }
 
     @Bean
     SetterInjectedGreetingService setterInjectedGreetingService(){
