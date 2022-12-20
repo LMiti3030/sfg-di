@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
  * created on 30.11.2022
  * Added @Service annotation, so it is automattically injected in the controllers -> managed by spring
  */
-@Service
+//@Service
 public class ConstructorInjectedGreetingService implements GreetingService {
     @Override
     public String sayGreeting() {

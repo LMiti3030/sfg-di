@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
  * @author LMiti3030
  * created on 30.11.2022
  */
-@Service
+//@Service
 public class SetterInjectedGreetingService implements GreetingService{
 
     public String sayGreeting() {
