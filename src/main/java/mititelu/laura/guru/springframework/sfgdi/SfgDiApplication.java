@@ -1,12 +1,14 @@
 package mititelu.laura.guru.springframework.sfgdi;
 
 import mititelu.laura.guru.springframework.sfgdi.controllers.*;
+import mititelu.laura.pets.PetServiceFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan(basePackages = {"mititelu.laura.guru.springframework.sfgdi", "mititelu.laura.pets"})
+//@ComponentScan(basePackages = {"mititelu.laura.guru.springframework.sfgdi", "mititelu.laura.pets"})
+//no longer needed as we use java config for both packages
 @SpringBootApplication
 public class SfgDiApplication {
 
@@ -37,6 +39,12 @@ public class SfgDiApplication {
         System.out.println("------ Constructor Based");
         ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) context.getBean("constructorInjectedController");
         System.out.println(constructorInjectedController.getGreeting());
+
+//        System.out.println("----Using Pet Bean Factory");
+//        PetServiceFactory petServiceFactory = (PetServiceFactory) context.getBean("petServiceFactory");
+//        System.out.println("dog: " + petServiceFactory.getPetService("dog"));
+//        System.out.println("cat: " + petServiceFactory.getPetService("cat"));
+//        System.out.println("default: " + petServiceFactory.getPetService("nothing"));
 
     }
 
