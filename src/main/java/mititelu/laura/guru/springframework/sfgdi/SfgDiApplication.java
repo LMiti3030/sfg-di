@@ -1,14 +1,15 @@
 package mititelu.laura.guru.springframework.sfgdi;
 
 import mititelu.laura.guru.springframework.sfgdi.controllers.*;
+import mititelu.laura.guru.springframework.sfgdi.services.PrototypeBean;
+import mititelu.laura.guru.springframework.sfgdi.services.SingletonBean;
 import mititelu.laura.pets.PetServiceFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-//@ComponentScan(basePackages = {"mititelu.laura.guru.springframework.sfgdi", "mititelu.laura.pets"})
-//no longer needed as we use java config for both packages
+@ComponentScan(basePackages = {"mititelu.laura.guru.springframework.sfgdi", "mititelu.laura.pets"})
 @SpringBootApplication
 public class SfgDiApplication {
 
@@ -45,6 +46,17 @@ public class SfgDiApplication {
 //        System.out.println("dog: " + petServiceFactory.getPetService("dog"));
 //        System.out.println("cat: " + petServiceFactory.getPetService("cat"));
 //        System.out.println("default: " + petServiceFactory.getPetService("nothing"));
+
+        System.out.println("------ Bean Scopes -------");
+        SingletonBean singletonBean1 = context.getBean(SingletonBean.class);
+        System.out.println(singletonBean1.getMyScope());
+        SingletonBean singletonBean2 = context.getBean(SingletonBean.class);
+        System.out.println(singletonBean2.getMyScope());
+
+        PrototypeBean prototypeBean1 = context.getBean(PrototypeBean.class);
+        System.out.println(prototypeBean1.getMyScope());
+        PrototypeBean prototypeBean2 = context.getBean(PrototypeBean.class);
+        System.out.println(prototypeBean2.getMyScope());
 
     }
 
