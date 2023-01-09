@@ -1,9 +1,9 @@
 package mititelu.laura.guru.springframework.sfgdi;
 
 import mititelu.laura.guru.springframework.sfgdi.controllers.*;
+import mititelu.laura.guru.springframework.sfgdi.datasource.FakeDataSource;
 import mititelu.laura.guru.springframework.sfgdi.services.PrototypeBean;
 import mititelu.laura.guru.springframework.sfgdi.services.SingletonBean;
-import mititelu.laura.pets.PetServiceFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -58,6 +58,10 @@ public class SfgDiApplication {
         PrototypeBean prototypeBean2 = context.getBean(PrototypeBean.class);
         System.out.println(prototypeBean2.getMyScope());
 
+        FakeDataSource fakeDataSource = context.getBean(FakeDataSource.class);
+        System.out.println(fakeDataSource.getUsername());
+        System.out.println(fakeDataSource.getPassword());
+        System.out.println(fakeDataSource.getJdbcUrl());
     }
 
 }
